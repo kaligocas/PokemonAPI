@@ -1,6 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LoginForm from '@/components/LoginForm.vue';
+</script>
 
-<template></template>
+<template>
+    <LoginForm/>
+</template>
 
 <style lang="scss">
 @import "../assets/styles.scss";
