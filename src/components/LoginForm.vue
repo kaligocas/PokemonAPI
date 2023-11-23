@@ -1,11 +1,15 @@
 <script setup lang="ts"></script>
 
 <template>
-<form>
     
-</form>
+<main>
+    <H1>LOGIN</H1>
+</main>
 </template>
 
-<style lang="scss">
-@import "../assets/styles.scss";
+<style lang="scss" scope>
+
+form {
+    background-color: yellow;
+}
 </style>
