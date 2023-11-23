@@ -4,12 +4,13 @@
     
 <main>
     <H1>LOGIN</H1>
+    <form class="form"></form>
 </main>
 </template>
 
 <style lang="scss" scope>
 
-form {
+.form{
     background-color: yellow;
 }
 </style>
