@@ -1,21 +1,29 @@
 <script setup lang="ts"></script>
 
 <template>
-<div class="container">
-    <h1>hola</h1>
-</div>
+  <div class="login">
+        <h1>Sing In</h1>
+        <form action="">
+            <label for="">
+                <p>Username</p>
+                <input type="text">
+            </label>
+            <label for="">
+                <p>Password</p>
+                <input type="text">
+            </label>
+            <label for="">
+                <p>Don´t have an account yet?<a href="">Sing Up</a></p>
+            </label>
+            <button>Submit</button>
+        </form>
+    </div>
 </template>
+
+
 
 <style lang="scss">
 @import "../assets/styles.scss";
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: pink;
-}
 
 </style>
