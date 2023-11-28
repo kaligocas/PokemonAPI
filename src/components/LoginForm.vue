@@ -10,7 +10,7 @@
             </label>
             <label for="">
                 <p>Password</p>
-                <input type="text">
+                <input type="password">
             </label>
             <label for="">
                 <p>Don´t have an account yet? <a href="">Sing Up</a></p>
@@ -30,8 +30,7 @@
     background-color: rgba(0, 0, 0, 0.364);
     color: white;
     padding: 1rem;
-    height: 40vh;
-    width: 40%;
+    width: 50rem;
     text-align: center;
     border-radius: 20px;
     margin: 2%;
@@ -39,7 +38,9 @@
     h1{
         font-size: 50px;
     }
-
+    p{
+        font-size: 15px;
+    }
     label{
         text-align: left;
     }
@@ -50,6 +51,7 @@
         border-radius: 50px;
         border: none;
         background-color: #f0f8ff4f;
+        font-size: 15px;
     }
     a{
         color: white;
@@ -65,7 +67,7 @@
         font-weight: 600;
         font-family: 'Poppins', sans-serif;
         cursor: pointer;
-        
+        font-size: 15px;
     }
     button:hover{
         background-color: rgba(255, 255, 255, 0.423);

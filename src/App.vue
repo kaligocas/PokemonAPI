@@ -26,6 +26,8 @@ import { RouterLink, RouterView } from "vue-router";
 </template>
 
 <style lang="scss">
+@import './assets/styles.scss';
+
 
 body{
     background-image: url("./assets/images/Sunny-Field-Scenery-AI-Generated-4K-Wallpaper-1.jpg");
@@ -35,8 +37,9 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 main{
-    display: flex;
+    display: grid;
     align-items: center;
+    justify-items: center;
 }
 nav{
     font-size: 2rem;
@@ -56,9 +59,7 @@ nav{
 }
 footer{
     background-color: rgba(0, 0, 0, 0.3);
-    width: 100%;
-    height: 10%;
-    bottom: 0;
+    height: 3rem;
 }
 footer h1{
     text-align: center;
