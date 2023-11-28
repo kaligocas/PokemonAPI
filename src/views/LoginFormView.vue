@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LoginForm from '@/components/LoginForm.vue';
+    import LoginForm from '../components/LoginForm.vue';
 </script>
 
 <template>
@@ -7,5 +7,8 @@ import LoginForm from '@/components/LoginForm.vue';
 </template>
 
 <style lang="scss">
-@import "../assets/styles.scss";
+
+@import "./../assets/styles.scss";
+
 </style>
+
