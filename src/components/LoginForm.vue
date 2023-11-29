@@ -1,21 +1,44 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useAuthStore } from '@/stores/auth';
+import { ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router';
+
+const store = useAuthStore()
+
+const username = ref('')
+const password = ref('')
+
+const route = useRoute()
+const router = useRouter()
+
+
+function login (){
+    if(username.value === store.user.username && password.value === store.user.password){
+        store.user.isAuthenticated = true;
+        const redirectPath = route.query.redirec || '/private'
+        router.push(redirectPath)
+    }
+}
+
+</script>
+    
 
 <template>
   <div class="login">
         <h1>Sing In</h1>
-        <form action="">
+        <form @submit.prevent="login">
             <label for="">
                 <p>Username</p>
-                <input type="text">
+                <input type="text" name="username" v-model="username">
             </label>
             <label for="">
                 <p>Password</p>
-                <input type="password">
+                <input type="password" name="password" v-model="password">
             </label>
             <label for="">
                 <p>Don´t have an account yet? <a href="">Sing Up</a></p>
             </label>
-            <button>Login</button>
+            <button  type="submit">Login</button>
         </form>
     </div>
 </template>

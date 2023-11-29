@@ -8,7 +8,8 @@ import { RouterLink, RouterView } from "vue-router";
         <nav class="nav-icon">
             <img id="pokebola" src="./assets/images/Poké_Ball_icon.svg.png" alt="" width="50">
             <img id="logo-pokemon" src="./assets/images/International_Pokémon_logo.svg.png" alt="" width="150">
-            <router-link to="/login">login</router-link>
+            <router-link to="/login">Login</router-link>
+            <router-link to="/private">Private</router-link>
         </nav>
     </header>
     
