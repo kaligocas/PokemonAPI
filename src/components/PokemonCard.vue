@@ -1,12 +1,9 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 <template>
-    <li>
-        <div>
-        <h3>{{  }}.{{  }}</h3>
-        </div>
-    </li>
+	<li>
+		<p>Pokemon</p>
+	</li>
 </template>
 <style lang="scss">
-@import '../assets/styles.scss';
+@import "../assets/styles.scss";
 </style>
