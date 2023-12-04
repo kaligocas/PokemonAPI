@@ -22,8 +22,8 @@ function logOut() {
             <router-link to="/">Home</router-link>
             <router-link to="/login">Login</router-link>
             <router-link to="/private">Private</router-link>
+            <p class="logout" id="logOut" v-on:click="logOut" v-if="store.user.isAuthenticated == true">LogOut</p>
         </nav>
-        <p id="logOut" v-on:click="logOut" v-if="store.user.isAuthenticated == true">LogOut</p>
     </header>
     
     <main>
@@ -41,7 +41,6 @@ function logOut() {
 
 <style lang="scss">
 @import './assets/styles.scss';
-
 
 body{
     background-image: url("./assets/images/Sunny-Field-Scenery-AI-Generated-4K-Wallpaper-1.jpg");
@@ -62,6 +61,15 @@ nav{
         text-decoration: none;
         color: white;
     }
+}
+.logout{
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 12%;
+    height: 2.5rem;
+    border-radius: 20px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }
 .nav-icon{
     padding: 1%;
