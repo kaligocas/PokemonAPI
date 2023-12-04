@@ -18,7 +18,7 @@ function login (){
         const redirectPath = route.query.redirec || '/private'
         router.push(redirectPath)
     }
-}
+}   
 
 </script>
     
