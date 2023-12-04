@@ -17,12 +17,15 @@ function logOut() {
     <header>
         <nav class="nav-icon">
             <img id="pokebola" src="./assets/images/Poké_Ball_icon.svg.png" alt="" width="50">
+            <div class="routers">
+                <router-link to="/">Home</router-link>
+                <router-link to="/login">Login</router-link>
+                <router-link to="/private">Private</router-link>
+                <p class="logout" id="logOut" v-on:click="logOut" v-if="store.user.isAuthenticated == true">LogOut</p>
+
+            </div>
+
             <img id="logo-pokemon" src="./assets/images/International_Pokémon_logo.svg.png" alt="" width="150">
-            
-            <router-link to="/">Home</router-link>
-            <router-link to="/login">Login</router-link>
-            <router-link to="/private">Private</router-link>
-            <p class="logout" id="logOut" v-on:click="logOut" v-if="store.user.isAuthenticated == true">LogOut</p>
         </nav>
     </header>
     
@@ -62,22 +65,27 @@ nav{
         color: white;
     }
 }
-.logout{
-    background-color: rgba(0, 0, 0, 0.3);
-    width: 12%;
-    height: 2.5rem;
-    border-radius: 20px;
-    display: grid;
+.routers{
+    display: flex;
     align-items: center;
-    justify-items: center;
+    gap: 1rem;
 }
 .nav-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
     padding: 1%;
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
 }
 #logo-pokemon{
     float: right;
+    height: 10%;
+}
+#pokebola{
+    width: 5rem;
+    height: 5rem;
 }
 footer{
     background-color: rgba(0, 0, 0, 0.3);
