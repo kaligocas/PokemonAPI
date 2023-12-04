@@ -13,7 +13,7 @@ const router = useRouter()
 
 
 function login (){
-    if(username.value === store.user.username && password.value === store.user.password){
+    if(username.value === store.user.username && password.value === store.user.password || username.value === store.register.Username && password.value === store.register.Password){
         store.user.isAuthenticated = true;
         const redirectPath = route.query.redirec || '/private'
         router.push(redirectPath)
