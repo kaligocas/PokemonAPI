@@ -6,6 +6,7 @@ import HomeView from '../views/PokemonView.vue';
 
 import { useAuthStore } from '@/stores/auth'
 import PrivateViewVue from '@/views/PrivateView.vue';
+import RegisterFormViewVue from '@/views/RegisterFormView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,9 +22,9 @@ const router = createRouter({
       component: LoginFormView
     },
     {
-      path: '/Registrer',
-      name: 'Registrer',
-      component: () => import('../views/RegistrerView.vue'),
+      path: '/register',
+      name: 'register',
+      component: RegisterFormViewVue
     },
     {
       path: '/private',

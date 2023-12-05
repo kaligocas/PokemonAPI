@@ -5,51 +5,41 @@ import { useRoute, useRouter } from 'vue-router';
 
 const store = useAuthStore()
 
-const username = ref('')
-const password = ref('')
+const Username = ref('')
+const Password = ref('')
 
 const route = useRoute()
 const router = useRouter()
 
-
-function login (){
-    if(username.value === store.user.username && password.value === store.user.password || username.value === store.register.Username && password.value === store.register.Password){
-        store.user.isAuthenticated = true;
-        const redirectPath = route.query.redirec || '/private'
+function register (){
+    if(Username.value && Password.value){
+        store.register.Username = Username;
+        store.register.Password = Password; 
+        const redirectPath = route.query.redirec || '/Login'
         router.push(redirectPath)
     }
-}   
-
+}
 </script>
-    
-
 <template>
-  <div class="login">
-        <h1>Sing In</h1>
-        <form @submit.prevent="login">
-            <label for="">
-                <p>Username</p>
-                <input type="text" name="username" v-model="username">
-            </label>
-            <label for="">
-                <p>Password</p>
-                <input type="password" name="password" v-model="password">
-            </label>
-            <label for="">
-                <p>Don´t have an account yet? <a href="">Sing Up</a></p>
-            </label>
-            <button  type="submit">Login</button>
-        </form>
-    </div>
+        <div class="register return">
+            <h1>Register Now</h1>
+            <form @submit.prevent="register">
+                <label for="">
+                    <p>Username</p>
+                    <input type="text" name="username" v-model="Username">
+                </label>
+                <label for="">
+                    <p>Password</p>
+                    <input type="password" name="password" v-model="Password">
+                </label>
+                <button  type="submit">Register</button>
+            </form>
+        </div>
 </template>
-
-
-
 <style lang="scss" scoped>
 @import "./../assets/styles.scss";
 
-
-.login{
+.register{
     background-color: rgba(0, 0, 0, 0.364);
     color: white;
     padding: 1rem;
@@ -81,6 +71,7 @@ function login (){
         font-weight: 700;
     }
     button{
+        margin-top: 2rem;
         width: 49%;
         padding: 4%;
         border-radius: 50px;

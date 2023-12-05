@@ -20,7 +20,7 @@ function logOut() {
             <div class="routers">
                 <router-link to="/">Home</router-link>
                 <router-link to="/login">Login</router-link>
-                <router-link to="/Registrer"></router-link>
+                <router-link to="/register">Register</router-link>
                 <router-link to="/private">Private</router-link>
                 <p class="logout" id="logOut" v-on:click="logOut" v-if="store.user.isAuthenticated == true">LogOut</p>
 

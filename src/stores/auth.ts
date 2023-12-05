@@ -11,6 +11,12 @@ export const useAuthStore = defineStore('auth', ()=>{
             isAuthenticated: false
         }
     )
+    let register = reactive(
+        {
+            Username:toString,
+            Password:toString,
+        }
+    )
 
-    return {user}
+    return {user, register}
 })
