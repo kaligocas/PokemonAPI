@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="login">
-        <h1>Sing In</h1>
+  <div class="return">
+        <h1>Register</h1>
         <form action="">
             <label for="">
                 <p>Username</p>
@@ -12,10 +12,7 @@
                 <p>Password</p>
                 <input type="text">
             </label>
-            <label for="">
-                <p>Don´t have an account yet? <a href="">Sing Up</a></p>
-            </label>
-            <button>Login</button>
+            <button>Let`s Go</button>
         </form>
     </div>
 </template>
@@ -25,16 +22,18 @@
 <style lang="scss" scoped>
 @import "./../assets/styles.scss";
 
-.login{
+.return{
     background-color: rgba(0, 0, 0, 0.364);
     color: white;
-    padding: 10%;
+    padding: .1% 5em;
     margin: 2%;
-    width: 23%;
+    width: 22%;
+    height: 30em;
     text-align: center;
     border-radius: 20px;
 
     h1{
+        height: 1em;
         font-size: 50px;
     }
 
@@ -56,6 +55,7 @@
     button{
         width: 49%;
         padding: 4%;
+        margin-top: 4em;
         border-radius: 50px;
         border: none;
         background-color: #f0f8ff4f;

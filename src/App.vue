@@ -10,6 +10,7 @@ import { RouterLink, RouterView } from "vue-router";
         </nav>
     </header>
     <router-link to="/login"></router-link>
+    <router-link to="/Registrer"></router-link>
     <router-view/>
     
     <footer>
