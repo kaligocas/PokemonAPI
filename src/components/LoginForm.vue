@@ -1,22 +1,21 @@
 <script setup lang="ts">
 import { useAuthStore } from '@/stores/auth';
 import { ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 const store = useAuthStore()
 
 const username = ref('')
 const password = ref('')
 
-const route = useRoute()
 const router = useRouter()
 
 
 function login (){
-    if(username.value === store.user.username && password.value === store.user.password || username.value === store.register.Username && password.value === store.register.Password){
+    if(username.value === store.user.username && password.value === store.user.password){
         store.user.isAuthenticated = true;
-        const redirectPath = route.query.redirec || '/private'
-        router.push(redirectPath)
+
+        router.push('/private')
     }
 }   
 

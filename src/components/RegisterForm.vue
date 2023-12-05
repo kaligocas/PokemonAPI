@@ -1,22 +1,29 @@
 <script setup lang="ts">
 import { useAuthStore } from '@/stores/auth';
 import { ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 const store = useAuthStore()
 
 const Username = ref('')
 const Password = ref('')
 
-const route = useRoute()
 const router = useRouter()
 
-function register (){
+function register () :void{
     if(Username.value && Password.value){
-        store.register.Username = Username;
-        store.register.Password = Password; 
-        const redirectPath = route.query.redirec || '/Login'
-        router.push(redirectPath)
+        let newUser = {
+            username: "",
+            password: "",
+            isAuthenticated: false
+        }
+
+        newUser.username = Username.value;
+        newUser.password = Password.value; 
+
+        store.register.push(newUser)
+
+        router.push('/login')
     }
 }
 </script>
