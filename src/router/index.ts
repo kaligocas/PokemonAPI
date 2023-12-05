@@ -21,6 +21,11 @@ const router = createRouter({
       component: LoginFormView
     },
     {
+      path: '/Registrer',
+      name: 'Registrer',
+      component: () => import('../views/RegistrerView.vue'),
+    },
+    {
       path: '/private',
       name: 'private',
       component: PrivateViewVue,
@@ -37,5 +42,6 @@ router.beforeEach( (to)=>{
     return { name: 'Login'}
   }
 })
+   
 
 export default router
