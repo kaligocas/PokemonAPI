@@ -10,13 +10,31 @@ const password = ref('')
 
 const router = useRouter()
 
-
 function login (){
-    if(username.value === store.user.username && password.value === store.user.password){
-        store.user.isAuthenticated = true;
-
-        router.push('/private')
+    for(let i = 1; i <= store.register.length; i++){
+        // i+=1
+        
+        console.log("entra al bucle", i)
+        if(username.value === store.register[i].username && password.value === store.register[i].password){
+            console.log("entra al if 1")
+            store.register[i].isAuthenticated = true;
+            store.user.isAuthenticated = true
+            
+            router.push('/private')
+        }
+        else if(username.value === store.register[i].username && password.value != store.register[i].password){
+            console.log("entra al if 2")
+            alert('Contraseña Incorrecta')
+        }
+        else{
+            console.log("entra al if 3")
+            alert('El usuario no existe')
+            router.push('/register')
+            break
+        }
+        
     }
+
 }   
 
 </script>

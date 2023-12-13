@@ -22,7 +22,7 @@ function register () :void{
         newUser.password = Password.value; 
 
         store.register.push(newUser)
-
+        
         router.push('/login')
     }
 }

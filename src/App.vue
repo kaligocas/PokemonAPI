@@ -1,13 +1,27 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink, RouterView, useRouter} from "vue-router";
 import { useAuthStore } from '@/stores/auth';
 
 const store = useAuthStore()
+const router = useRouter()
 
 function logOut() {
-    if(store.user.isAuthenticated==true){
-        store.user.isAuthenticated = false
+    for(let x = 1; x <= store.register.length; x++){
+        console.log('bucle')
+        
+        if(store.register[x].isAuthenticated == true){
+        console.log('if 1')
+        store.user.isAuthenticated = store.register[x].isAuthenticated
+        }
+
+        if(store.user.isAuthenticated == true){
+            console.log('if 2')
+            store.user.isAuthenticated = false
+            store.register[x].isAuthenticated = false
+            router.push('/')
+        }
     }
+
 }
 
 </script>
