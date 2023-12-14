@@ -38,7 +38,7 @@ npm run dev
 ```sh
 npm run build
 ```
-##icons used for project
+## Programs used for project
 ![html5-logo-24](https://github.com/kaligocas/pokemonAPI/assets/144242742/8a7b6788-b8f1-4330-ace3-04e308fa8dbe)
 ![typescript-logo-24](https://github.com/kaligocas/pokemonAPI/assets/144242742/171acdf6-5dd3-4b1a-b6ab-1de8ef8732e3)
 ![vuejs-logo-24](https://github.com/kaligocas/pokemonAPI/assets/144242742/057c3ff8-8bd6-4a6f-89a2-686a73d7e287)
