@@ -1,85 +1,107 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView, useRouter } from "vue-router";
+import { useAuthStore } from '@/stores/auth';
+
+const store = useAuthStore()
+const router = useRouter()
+
+function logOut() {
+    if(store.user.isAuthenticated==true){
+        store.user.isAuthenticated = false
+        router.push('/')
+    }
+}
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    
+    <header>
+        <nav class="nav-icon">
+            <img id="pokebola" src="./assets/images/Poké_Ball_icon.svg.png" alt="" width="50">
+            <div class="routers">
+                <router-link to="/">Home</router-link>
+                <router-link to="/login">Login</router-link>
+                <router-link to="/register">Register</router-link>
+                <router-link to="/private">Private</router-link>
+                <p class="logout" id="logOut" v-on:click="logOut" v-if="store.user.isAuthenticated == true">LogOut</p>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+            </div>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+            <img id="logo-pokemon" src="./assets/images/International_Pokémon_logo.svg.png" alt="" width="150">
+        </nav>
+    </header>
+    
+    <main>
+        <router-view/>
+    </main>
+    
+    <footer>
+       
+            <h1>Pokemon Team</h1>
+        
+    </footer>
+    
+    
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+<style lang="scss">
+@import './assets/styles.scss';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+body{
+    background-image: url("./assets/images/Sunny-Field-Scenery-AI-Generated-4K-Wallpaper-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
 }
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+main{
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
+nav{
+    font-size: 2rem;
+    
+    a{
+        text-decoration: none;
+        color: white;
+    }
 }
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
+.routers{
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
+    align-items: center;
+    gap: 1rem;
+}
+.nav-icon{
     display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+#logo-pokemon{
+    float: right;
+    height: 10%;
+}
+#pokebola{
+    width: 5rem;
+    height: 5rem;
+}
+footer{
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 3rem;
+}
+footer h1{
+    text-align: center;
+    color: aliceblue;
+}
+p{
+    font-size: 1.8rem;
+}
+#logOut{
+    cursor: pointer;
 }
 </style>
