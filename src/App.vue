@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink, RouterView, useRouter } from "vue-router";
 import { useAuthStore } from '@/stores/auth';
 
 const store = useAuthStore()
+const router = useRouter()
 
 function logOut() {
     if(store.user.isAuthenticated==true){
         store.user.isAuthenticated = false
+        router.push('/')
     }
 }
 
@@ -50,7 +52,7 @@ body{
     background-image: url("./assets/images/Sunny-Field-Scenery-AI-Generated-4K-Wallpaper-1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    background-attachment: fixed;
     font-family: 'Poppins', sans-serif;
 }
 main{

@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import PrivateView from './PrivateView.vue';
 import LoginFormView from './LoginFormView.vue';
-
+import PokemonList from "@/components/PokemonList.vue";
 </script>
 
 <template>
-    <h1>home</h1>
+    <Suspense>
+			<PokemonList />
+	</Suspense>
 
 </template>
 
