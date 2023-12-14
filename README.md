@@ -38,3 +38,16 @@ npm run dev
 ```sh
 npm run build
 ```
+##icons used for project
+![html5-logo-24](https://github.com/kaligocas/pokemonAPI/assets/144242742/8a7b6788-b8f1-4330-ace3-04e308fa8dbe)
+![typescript-logo-24](https://github.com/kaligocas/pokemonAPI/assets/144242742/171acdf6-5dd3-4b1a-b6ab-1de8ef8732e3)
+![vuejs-logo-24](https://github.com/kaligocas/pokemonAPI/assets/144242742/057c3ff8-8bd6-4a6f-89a2-686a73d7e287)
+![sass-logo-24](https://github.com/kaligocas/pokemonAPI/assets/144242742/c3410842-d0f6-44f7-aa07-2020db79b390)
+![visual-studio-logo-24](https://github.com/kaligocas/pokemonAPI/assets/144242742/8909d301-eddd-4db6-932b-d4ae1e0f3c7a)
+
+
+
+
+
+
+
